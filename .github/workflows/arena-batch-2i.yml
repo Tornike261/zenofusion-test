@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      ARENA_BASE_URL: "https://sdmntprnortheu.oaiusercontent.com/files/00000000-24ac-81f4-8ebf-3d69af17dd93/raw?se=2026-08-18T18%3A10%3A09Z&sp=r&sv=2026-02-06&sr=b&scid=09a58b87-49e3-542c-a3d1-a4a4216a8ae4&skoid=e5f84a89-964a-4fd3-92c2-c2cb3a12ea16&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-08-18T05%3A23%3A48Z&ske=2026-08-19T05%3A23%3A48Z&sks=b&skv=2026-02-06&sig=2PnVjDONPpFKSMIElKLZ6qRCb8DHGuRhJTNihQTKh44%3D"
+      ARENA_BASE_URL: "https://sdmntprukwest.oaiusercontent.com/files/00000000-91fc-8243-a31f-0c7e6f3d1c38/raw?se=2026-08-18T18%3A14%3A20Z&sp=r&sv=2026-02-06&sr=b&scid=9cd8fc71-de7c-5749-a7b1-0782a473db6d&skoid=e5f84a89-964a-4fd3-92c2-c2cb3a12ea16&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-08-18T06%3A23%3A42Z&ske=2026-08-19T06%3A23%3A42Z&sks=b&skv=2026-02-06&sig=f6gGDt4myNjLzSt5HY2nf5BInEapFyINHdrgEUwh4xQ%3D"
     steps:
       - uses: actions/checkout@v4
       - name: Build and regression
