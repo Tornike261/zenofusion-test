@@ -1,0 +1,29 @@
+name: Arena Batch 2I Build
+on:
+  push:
+    branches: [arena-batch-2i-build]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ARENA_BASE_URL: "https://sdmntprnortheu.oaiusercontent.com/files/00000000-24ac-81f4-8ebf-3d69af17dd93/raw?se=2026-08-18T18%3A10%3A09Z&sp=r&sv=2026-02-06&sr=b&scid=09a58b87-49e3-542c-a3d1-a4a4216a8ae4&skoid=e5f84a89-964a-4fd3-92c2-c2cb3a12ea16&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-08-18T05%3A23%3A48Z&ske=2026-08-19T05%3A23%3A48Z&sks=b&skv=2026-02-06&sig=2PnVjDONPpFKSMIElKLZ6qRCb8DHGuRhJTNihQTKh44%3D"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and regression
+        run: python3 scripts/build_arena_2i.py
+      - name: Inventory
+        run: |
+          ls -lah build_output
+          sha256sum build_output/zenofusion-arena-batch-2I-server-side-offline-auto-execution-1.2.0.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arena-batch-2i-release
+          path: build_output/*
+          if-no-files-found: error
+          retention-days: 3
