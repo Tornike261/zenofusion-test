@@ -2,6 +2,8 @@ name: Arena Batch 2I Build
 on:
   push:
     branches: [arena-batch-2i-build]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
